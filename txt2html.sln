@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "text2html.test", "Tests\tex
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "txt2html.UI", "txt2html.UI\txt2html.UI.csproj", "{C3DCBCA5-4211-4C16-B543-E2256AD1FEF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "temp", "temp\temp.csproj", "{E8407095-F816-4849-B7F1-7BBB89019836}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,10 +35,6 @@ Global
 		{C3DCBCA5-4211-4C16-B543-E2256AD1FEF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3DCBCA5-4211-4C16-B543-E2256AD1FEF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3DCBCA5-4211-4C16-B543-E2256AD1FEF9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E8407095-F816-4849-B7F1-7BBB89019836}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E8407095-F816-4849-B7F1-7BBB89019836}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E8407095-F816-4849-B7F1-7BBB89019836}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E8407095-F816-4849-B7F1-7BBB89019836}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
