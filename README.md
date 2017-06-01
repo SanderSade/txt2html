@@ -9,7 +9,7 @@ txt2html is a program to convert plain text files to the hypertext markup langua
 * HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (<,>,",&) are always replaced, so generally you don't have to enable this option
 * Detects `_italic_` and `*bold*` (optional)
 * Detects and marks URL's (optional)
-* Optional paragraph joining
+* Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specfied length, which don't end with characters marking end of line ('.?!") are joined.
 * Fast (v2 is more than 50x faster than v1!)
 * Supports converting multiple files at once
 * Both graphical and command-line interface
