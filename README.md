@@ -1,12 +1,12 @@
 # txt2html
-txt2html is a program to convert plain text files to the hypertext markup language.
+txt2html is a program to convert plain text files to the hypertext markup language (HTML).
 
 ![txt2html](https://cloud.githubusercontent.com/assets/18664267/26674887/91636272-46ca-11e7-8be0-2e15e29a1df4.png)
 
 ### Features
 * Clean and compliant HTML5
 * Option to include your own CSS
-* HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (<,>,",&) are always replaced, so generally you don't have to enable this option!
+* HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (<,>,",&) are always replaced, so generally you don't have to enable this option
 * Detects `_italic_` and `*bold*` (optional)
 * Detects and marks URL's (optional)
 * Optional paragraph joining
@@ -47,7 +47,7 @@ txt2html "c:\Books\Collected works of Shakespeare.txt" -fixparagraphs:45 -- atte
 ### License and home page
 txt2html is licensed under [Mozilla Public License](https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt)
 
-(Home page)[http://dukelupus.com/txt2html] has some more information and older (non-.NET) version of txt2html
+[Home page](http://dukelupus.com/txt2html) has some more information and older (non-.NET) version of txt2html
 
 ### Version info
 * 2.0
