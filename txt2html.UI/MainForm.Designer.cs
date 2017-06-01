@@ -118,13 +118,13 @@
 			// 
 			this.LinkHomepage.AccessibleDescription = "txt2html homepage";
 			this.LinkHomepage.AutoSize = true;
-			this.LinkHomepage.Location = new System.Drawing.Point(359, 21);
+			this.LinkHomepage.Location = new System.Drawing.Point(369, 21);
 			this.LinkHomepage.Name = "LinkHomepage";
-			this.LinkHomepage.Size = new System.Drawing.Size(161, 13);
+			this.LinkHomepage.Size = new System.Drawing.Size(151, 13);
 			this.LinkHomepage.TabIndex = 8;
 			this.LinkHomepage.TabStop = true;
-			this.LinkHomepage.Tag = "http://dukelupus.com/#.txt2html";
-			this.LinkHomepage.Text = "http://dukelupus.com/#.txt2html";
+			this.LinkHomepage.Tag = "http://dukelupus.com/txt2html";
+			this.LinkHomepage.Text = "http://dukelupus.com/txt2html";
 			this.ToolTips.SetToolTip(this.LinkHomepage, "txt2html homepage");
 			this.LinkHomepage.Click += new System.EventHandler(this.Label_Click);
 			// 

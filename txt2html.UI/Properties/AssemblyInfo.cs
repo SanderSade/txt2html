@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("txt2html.UI")]
 [assembly: AssemblyDescription("UI for txt2html")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("https://github.com/SanderSade/txt2html")]
 [assembly: AssemblyProduct("txt2html.UI")]
 [assembly: AssemblyCopyright("Copyright Sander Säde/DukeLupus©  2017")]
 [assembly: AssemblyTrademark("")]
