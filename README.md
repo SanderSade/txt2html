@@ -12,6 +12,7 @@ txt2html is a program to convert plain text files to the hypertext markup langua
 * Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specfied length, which don't end with characters marking end of line ('.?!") are joined.
 * Fast (v2 is more than 50x faster than v1!)
 * Supports converting multiple files at once
+* Drag'n'drop
 * Both graphical and command-line interface
 * Free and open source
 
@@ -52,3 +53,10 @@ txt2html is licensed under [Mozilla Public License](https://github.com/SanderSad
 ### Version info
 * 2.0
     * Complete rewrite in .NET
+    * Major functional changes compared to v1 are:
+        * HTML5 (was XHTML)
+        * Supports drag'n'drop
+        * Multi-file support
+        * Right-click Explorer option no longer available (adding menu items for .txt seems to be blocked in Windows 10. I could easily add shortcut for .text, but not .txt)
+        * Slightly improved paragraph joining
+        * Option to add the title
