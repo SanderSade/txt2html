@@ -54,7 +54,7 @@ namespace DukeLupus.txt2html.console
             Console.WriteLine(
                 "txt2html \"c:\\Books\\Collected works of Shakespeare.txt\" -- convert the specified file with default options, output file will be \"c:\\Books\\Collected works of Shakespeare.html\"");
             Console.WriteLine(
-                "txt2html \"c:\\Books\\Collected works of Shakespeare.txt\" -o:\"c:\\HTML Bools\\Collected-Shakespeare.html\" -- convert the specified file with default options, specifying an output file");
+                "txt2html \"c:\\Books\\Collected works of Shakespeare.txt\" -o:\"c:\\HTML Books\\Collected-Shakespeare.html\" -- convert the specified file with default options, specifying an output file");
             Console.WriteLine(
                 "txt2html \"c:\\Books\\Collected works of Shakespeare.txt\" -bold -italic -t:\"Complete collected works of William Shakespeare\"  -- title is specified, bold and italic are fixed");
             Console.WriteLine("txt2html \"c:\\Books\\Collected works of Shakespeare.txt\" -css:\"c:\\CSS\\clean.css\" -- include custom CSS to the book.");
