@@ -25,7 +25,7 @@ Delete all files
 ### Command-line options
 ```
 Optional arguments are in parentheses []:  
-        txthtml "<input file>" [-o:"<output file>"] [-t:"<title>"] [-css:"<css file>"] [-bold] [-italic] [-urls] [-entities] [-fixparagraphs:<minimum line length>]  
+        txthtml.console.exe "<input file>" [-o:"<output file>"] [-t:"<title>"] [-css:"<css file>"] [-bold] [-italic] [-urls] [-entities] [-fixparagraphs:<minimum line length>]  
         
 Input file -- just name or full path to the input text file
 -o:<output file> -- Optional, if omitted input file with the .html extension will be used. Can have a full path. WARNING: output file will be overwritten if it exists!
@@ -48,7 +48,7 @@ txt2html "c:\Books\Collected works of Shakespeare.txt" -fixparagraphs:45 -- atte
 ### License and home page
 txt2html is licensed under [Mozilla Public License](https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt)
 
-[Home page](http://dukelupus.com/txt2html) has some more information and older (non-.NET) version of txt2html
+[Home page](http://dukelupus.com/txt2html) has an older (non-.NET) version of txt2html, which you can use on Windows Vista and other older versions of Windows
 
 ### Version info
 * 2.0
