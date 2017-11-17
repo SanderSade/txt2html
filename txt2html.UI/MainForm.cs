@@ -6,9 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DukeLupus.txt2html.UI.Properties;
+using Sander.txt2html.UI.Properties;
 
-namespace DukeLupus.txt2html.UI
+namespace Sander.txt2html.UI
 {
 	public partial class MainForm : Form
 	{

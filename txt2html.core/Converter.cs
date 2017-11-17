@@ -1,7 +1,9 @@
 ﻿using System;
 using System.IO;
+using System.Runtime.CompilerServices;
 
-namespace DukeLupus.txt2html
+[assembly:InternalsVisibleTo("text2html.test")]
+namespace Sander.txt2html
 {
     public static class Converter
     {

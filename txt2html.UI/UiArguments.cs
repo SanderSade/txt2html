@@ -1,4 +1,4 @@
-﻿namespace DukeLupus.txt2html.UI
+﻿namespace Sander.txt2html.UI
 {
 	internal sealed class UiArguments
 	{

@@ -1,4 +1,4 @@
-﻿namespace DukeLupus.txt2html
+﻿namespace Sander.txt2html
 {
     public sealed class ConversionSettings
     {

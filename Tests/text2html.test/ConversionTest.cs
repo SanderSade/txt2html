@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using DukeLupus.txt2html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sander.txt2html;
 
 namespace text2html.test
 {

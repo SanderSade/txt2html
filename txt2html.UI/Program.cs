@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DukeLupus.txt2html.UI
+namespace Sander.txt2html.UI
 {
 	internal static class Program
 	{

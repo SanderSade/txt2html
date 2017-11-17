@@ -1,4 +1,4 @@
-﻿namespace DukeLupus.txt2html.console
+﻿namespace Sander.txt2html.console
 {
     internal sealed class ConversionArguments
     {

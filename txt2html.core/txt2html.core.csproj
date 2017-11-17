@@ -1,56 +1,40 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C2DA335-C470-4A6A-8738-266AD49C8695}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DukeLupus.txt2html</RootNamespace>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <AssemblyName>txt2html.core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <RootNamespace>Sander.txt2html</RootNamespace>
+    <PackageId>Sander.txt2html</PackageId>
+    <Version>2.0.1</Version>
+    <Authors>Sander Säde</Authors>
+    <Company>Sander Säde</Company>
+    <Product>txt2html</Product>
+    <PackageLicenseUrl>https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/SanderSade/txt2html</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SanderSade/txt2html</RepositoryUrl>
+    <RepositoryType>GitHub</RepositoryType>
+    <PackageTags>txt2html, text conversion</PackageTags>
+    <AssemblyVersion>2.0.1.0</AssemblyVersion>
+    <FileVersion>2.0.1.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Use txt2html to convert plain text files to the hypertext markup language (HTML).
+
+Features:
+* Clean and compliant HTML5
+* Option to include your own CSS
+* HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (&lt;,&gt;,",&amp;) are always replaced, so generally you don't have to enable this option
+* Detects and fixes _italic_ and *bold* (optional)
+* Detects and marks URL's (optional)
+* Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specified length, which don't end with characters marking end of line ('.?!") are joined.
+* Fast (v2 is more than 50x faster than v1!)
+* Free and open source</Description>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Web" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Conversion.cs" />
-    <Compile Include="ConversionSettings.cs" />
-    <Compile Include="Converter.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="txt2html.ent">
+    <EmbeddedResource Include="txt2html.ent">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
+      <IncludeInPackage>true</IncludeInPackage>
+      <BuildAction>None</BuildAction>
+      <CopyToOutput>true</CopyToOutput>
+    </EmbeddedResource>
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

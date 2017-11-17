@@ -4,7 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 
-namespace DukeLupus.txt2html.console
+namespace Sander.txt2html.console
 {
     internal static class ArgumentParser
     {

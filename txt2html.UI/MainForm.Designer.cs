@@ -1,4 +1,4 @@
-﻿namespace DukeLupus.txt2html.UI
+﻿namespace Sander.txt2html.UI
 {
 	partial class MainForm
 	{
@@ -52,9 +52,9 @@
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.NumericMinimumLine)).BeginInit();
 			this.SuspendLayout();
-			// 
+			//
 			// groupBox1
-			// 
+			//
 			this.groupBox1.Controls.Add(this.LbEntityList);
 			this.groupBox1.Controls.Add(this.ChCreateEntities);
 			this.groupBox1.Controls.Add(this.LinkGithub);
@@ -73,9 +73,9 @@
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Options";
-			// 
+			//
 			// LbEntityList
-			// 
+			//
 			this.LbEntityList.AccessibleDescription = "Edit entity list";
 			this.LbEntityList.AutoSize = true;
 			this.LbEntityList.Location = new System.Drawing.Point(139, 141);
@@ -87,9 +87,9 @@
 			this.LbEntityList.Text = "Edit entity list";
 			this.ToolTips.SetToolTip(this.LbEntityList, resources.GetString("LbEntityList.ToolTip"));
 			this.LbEntityList.Click += new System.EventHandler(this.LbEntityList_Click);
-			// 
+			//
 			// ChCreateEntities
-			// 
+			//
 			this.ChCreateEntities.AccessibleDescription = "Replace characters with HTML entities.  ";
 			this.ChCreateEntities.AutoSize = true;
 			this.ChCreateEntities.Location = new System.Drawing.Point(7, 140);
@@ -99,9 +99,9 @@
 			this.ChCreateEntities.Text = "Create HTML entities";
 			this.ToolTips.SetToolTip(this.ChCreateEntities, resources.GetString("ChCreateEntities.ToolTip"));
 			this.ChCreateEntities.UseVisualStyleBackColor = true;
-			// 
+			//
 			// LinkGithub
-			// 
+			//
 			this.LinkGithub.AccessibleDescription = "txt2html source code at GitHub";
 			this.LinkGithub.AutoSize = true;
 			this.LinkGithub.Location = new System.Drawing.Point(320, 45);
@@ -113,9 +113,9 @@
 			this.LinkGithub.Text = "https://github.com/SanderSade/txt2html";
 			this.ToolTips.SetToolTip(this.LinkGithub, "txt2html source code at GitHub");
 			this.LinkGithub.Click += new System.EventHandler(this.Label_Click);
-			// 
+			//
 			// LinkHomepage
-			// 
+			//
 			this.LinkHomepage.AccessibleDescription = "txt2html homepage";
 			this.LinkHomepage.AutoSize = true;
 			this.LinkHomepage.Location = new System.Drawing.Point(369, 21);
@@ -127,9 +127,9 @@
 			this.LinkHomepage.Text = "http://dukelupus.com/txt2html";
 			this.ToolTips.SetToolTip(this.LinkHomepage, "txt2html homepage");
 			this.LinkHomepage.Click += new System.EventHandler(this.Label_Click);
-			// 
+			//
 			// NumericMinimumLine
-			// 
+			//
 			this.NumericMinimumLine.AccessibleDescription = "Specify minimum line length for joining paragraphs";
 			this.NumericMinimumLine.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.NumericMinimumLine.Location = new System.Drawing.Point(214, 116);
@@ -147,9 +147,9 @@
             0,
             0,
             0});
-			// 
+			//
 			// ChJoinParagraphs
-			// 
+			//
 			this.ChJoinParagraphs.AccessibleDescription = "Attempt to merge hard-coded line-breaks into coherent paragraphs. Lines shorter t" +
     "han <minimum line length> symbols which don\'t end with characters marking end of" +
     " line (\'.?!\\\") are joined";
@@ -163,9 +163,9 @@
         " than specified minimum line length,\r\nwhich don\'t end with characters marking en" +
         "d of line (\'.?!\\\") are joined");
 			this.ChJoinParagraphs.UseVisualStyleBackColor = true;
-			// 
+			//
 			// LbCssFile
-			// 
+			//
 			this.LbCssFile.AccessibleDescription = "Custom CSS file";
 			this.LbCssFile.AutoEllipsis = true;
 			this.LbCssFile.Location = new System.Drawing.Point(173, 93);
@@ -174,9 +174,9 @@
 			this.LbCssFile.TabIndex = 5;
 			this.ToolTips.SetToolTip(this.LbCssFile, "Custom CSS file");
 			this.LbCssFile.Click += new System.EventHandler(this.Label_Click);
-			// 
+			//
 			// BtSelectCSS
-			// 
+			//
 			this.BtSelectCSS.AccessibleDescription = "Select custom CSS file";
 			this.BtSelectCSS.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
 			this.BtSelectCSS.Location = new System.Drawing.Point(95, 88);
@@ -188,9 +188,9 @@
 			this.ToolTips.SetToolTip(this.BtSelectCSS, "Select custom CSS file");
 			this.BtSelectCSS.UseVisualStyleBackColor = true;
 			this.BtSelectCSS.Click += new System.EventHandler(this.BtSelectCSS_Click);
-			// 
+			//
 			// ChIncludeCSS
-			// 
+			//
 			this.ChIncludeCSS.AccessibleDescription = "Include custom CSS file";
 			this.ChIncludeCSS.AutoSize = true;
 			this.ChIncludeCSS.Location = new System.Drawing.Point(7, 92);
@@ -200,9 +200,9 @@
 			this.ChIncludeCSS.Text = "Include CSS";
 			this.ToolTips.SetToolTip(this.ChIncludeCSS, "Include custom CSS file");
 			this.ChIncludeCSS.UseVisualStyleBackColor = true;
-			// 
+			//
 			// ChDetectUrls
-			// 
+			//
 			this.ChDetectUrls.AccessibleDescription = "Detect URLs and make them clickable";
 			this.ChDetectUrls.AutoSize = true;
 			this.ChDetectUrls.Location = new System.Drawing.Point(7, 68);
@@ -212,9 +212,9 @@
 			this.ChDetectUrls.Text = "Detect URLs";
 			this.ToolTips.SetToolTip(this.ChDetectUrls, "Detect URLs and make them clickable");
 			this.ChDetectUrls.UseVisualStyleBackColor = true;
-			// 
+			//
 			// ChFixItalic
-			// 
+			//
 			this.ChFixItalic.AccessibleDescription = "Fix _italic_ text";
 			this.ChFixItalic.AutoSize = true;
 			this.ChFixItalic.Location = new System.Drawing.Point(7, 44);
@@ -224,9 +224,9 @@
 			this.ChFixItalic.Text = "Fix _italic_";
 			this.ToolTips.SetToolTip(this.ChFixItalic, "Fix _italic_ text");
 			this.ChFixItalic.UseVisualStyleBackColor = true;
-			// 
+			//
 			// ChFixBold
-			// 
+			//
 			this.ChFixBold.AccessibleDescription = "Fix *bold* text";
 			this.ChFixBold.AutoSize = true;
 			this.ChFixBold.Location = new System.Drawing.Point(7, 20);
@@ -236,17 +236,17 @@
 			this.ChFixBold.Text = "Fix *bold*";
 			this.ToolTips.SetToolTip(this.ChFixBold, "Fix *bold* text");
 			this.ChFixBold.UseVisualStyleBackColor = true;
-			// 
+			//
 			// ToolTips
-			// 
+			//
 			this.ToolTips.AutomaticDelay = 400;
 			this.ToolTips.BackColor = System.Drawing.Color.White;
-			// 
+			//
 			// BtSelectFiles
-			// 
+			//
 			this.BtSelectFiles.AccessibleDescription = "Select one or more .txt files";
 			this.BtSelectFiles.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.BtSelectFiles.Image = global::DukeLupus.txt2html.UI.Properties.Resources.directory_icon;
+			this.BtSelectFiles.Image = global::Sander.txt2html.UI.Properties.Resources.directory_icon;
 			this.BtSelectFiles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			this.BtSelectFiles.Location = new System.Drawing.Point(12, 190);
 			this.BtSelectFiles.Name = "BtSelectFiles";
@@ -257,9 +257,9 @@
 			this.ToolTips.SetToolTip(this.BtSelectFiles, "Select one or more .txt files");
 			this.BtSelectFiles.UseVisualStyleBackColor = true;
 			this.BtSelectFiles.Click += new System.EventHandler(this.BtSelectFiles_Click);
-			// 
+			//
 			// LbTitle
-			// 
+			//
 			this.LbTitle.AccessibleDescription = "In case of multiple files, same title will be used for all!";
 			this.LbTitle.AutoSize = true;
 			this.LbTitle.Location = new System.Drawing.Point(170, 201);
@@ -268,9 +268,9 @@
 			this.LbTitle.TabIndex = 2;
 			this.LbTitle.Text = "Title:";
 			this.ToolTips.SetToolTip(this.LbTitle, "In case of multiple files, same title will be used for all!");
-			// 
+			//
 			// TxtTitle
-			// 
+			//
 			this.TxtTitle.AccessibleDescription = "In case of multiple files, same title will be used for all!";
 			this.TxtTitle.Location = new System.Drawing.Point(199, 198);
 			this.TxtTitle.Name = "TxtTitle";
@@ -278,20 +278,20 @@
 			this.TxtTitle.TabIndex = 3;
 			this.TxtTitle.Tag = "";
 			this.ToolTips.SetToolTip(this.TxtTitle, "In case of multiple files, same title will be used for all!");
-			// 
+			//
 			// CssFileDialog
-			// 
+			//
 			this.CssFileDialog.Filter = "CSS files|*.css|All files|*.*";
 			this.CssFileDialog.Title = "Select custom CSS file";
-			// 
+			//
 			// TxtFileDialog
-			// 
+			//
 			this.TxtFileDialog.Filter = "Text files|*.txt|All files|*.*";
 			this.TxtFileDialog.Multiselect = true;
 			this.TxtFileDialog.Title = "Select files for conversion";
-			// 
+			//
 			// MainForm
-			// 
+			//
 			this.AllowDrop = true;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

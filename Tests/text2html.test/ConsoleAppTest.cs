@@ -1,8 +1,8 @@
 ﻿using System.Diagnostics;
 using System.IO;
-using DukeLupus.txt2html.console;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Newtonsoft.Json;
+using Sander.txt2html.console;
 
 namespace text2html.test
 {
