@@ -23,7 +23,7 @@
         public uint? MinimumLineLength { get; set; }
 
         /// <summary>
-        /// HTML entity replacement. Change txt2html.ent to specify what is changed. Note that critical entities (&gt;&lt;&quot;&amp;) are always replaced
+        /// HTML entity replacement. Change txt2html.ent to specify what is changed. Note that critical entities (&gt; &lt; &quot; &amp;) are always replaced
         /// </summary>
         public bool CreateEntities { get; set; }
 

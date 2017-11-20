@@ -23,7 +23,7 @@ namespace Sander.txt2html
 
 
 		/// <inheritdoc />
-		public Conversion(ConversionSettings settings)
+		internal Conversion(ConversionSettings settings)
 		{
 			_settings = settings;
 			_sb = new StringBuilder();
@@ -45,6 +45,7 @@ namespace Sander.txt2html
 			}
 			else
 			{
+				Trace.TraceWarning($"File \"{txt2HtmlEnt}\" was not found. Falling back to the embedded resource.");
 				var resourceName = FormattableString.Invariant($"Sander.txt2html.{txt2HtmlEnt}");
 				var assembly = Assembly.GetExecutingAssembly();
 				using (var stream = assembly.GetManifestResourceStream(resourceName))
@@ -54,13 +55,14 @@ namespace Sander.txt2html
 						lines = result.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 					}
 			}
+
 			_entities = new Dictionary<string, string>();
 			foreach (var line in lines)
 			{
 				var split = line.Split('\t');
 				if (split.Length != 2)
 					throw new ApplicationException($"Bad line in {txt2HtmlEnt}: {line}. Every line must be in format <character><tab><entity>");
-				//Debug.WriteLine(split[0]);
+
 				_entities.Add(split[0], split[1]);
 			}
 		}
@@ -69,12 +71,12 @@ namespace Sander.txt2html
 		internal string Convert(string[] fileContent)
 		{
 			if (!string.IsNullOrWhiteSpace(_settings.Title))
-				_sb.AppendLine($"<title>{(_settings.CreateEntities && _entities?.Count > 0 ? EncodeCharacters(_settings.Title) : _settings.Title)}</title>");
+				_sb.AppendLine(FormattableString.Invariant($"<title>{(_settings.CreateEntities && _entities?.Count > 0 ? EncodeCharacters(_settings.Title) : _settings.Title)}</title>"));
 
 			if (!string.IsNullOrWhiteSpace(_settings.Css))
 			{
 
-				_sb.AppendLine($"<style>\r\n{_settings.Css}\r\n</style>");
+				_sb.AppendLine(FormattableString.Invariant($"<style>\r\n{_settings.Css}\r\n</style>"));
 			}
 
 			_sb.AppendLine("</head>\r\n<body>");
@@ -122,7 +124,7 @@ namespace Sander.txt2html
 				if (_settings.DetectUrls)
 					encoded = ReplaceUrls(encoded);
 
-				_sb.AppendLine($"<p>{encoded}</p>");
+				_sb.AppendLine(FormattableString.Invariant($"<p>{encoded}</p>"));
 			}
 		}
 
@@ -164,7 +166,7 @@ namespace Sander.txt2html
 
 				encoded = encoded.Remove(first, 1);
 				var tag = isStart ? string.Empty : "/";
-				encoded = encoded.Insert(first, $"<{tag}{tagcontent}>");
+				encoded = encoded.Insert(first, FormattableString.Invariant($"<{tag}{tagcontent}>"));
 				isStart = !isStart;
 			}
 		}

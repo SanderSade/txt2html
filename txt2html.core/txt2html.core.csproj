@@ -29,6 +29,14 @@ Features:
 * Fast (v2 is more than 50x faster than v1!)
 * Free and open source</Description>
   </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile></DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\txt2html.xml</DocumentationFile>
+  </PropertyGroup>
   <ItemGroup>
     <EmbeddedResource Include="txt2html.ent">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
