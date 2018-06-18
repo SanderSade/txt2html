@@ -49,11 +49,14 @@ namespace Sander.txt2html
 				var resourceName = FormattableString.Invariant($"Sander.txt2html.{txt2HtmlEnt}");
 				var assembly = Assembly.GetExecutingAssembly();
 				using (var stream = assembly.GetManifestResourceStream(resourceName))
+				{
+					Debug.Assert(stream != null, nameof(stream) + " != null");
 					using (var reader = new StreamReader(stream))
 					{
 						var result = reader.ReadToEnd();
 						lines = result.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 					}
+				}
 			}
 
 			_entities = new Dictionary<string, string>();
@@ -68,14 +71,15 @@ namespace Sander.txt2html
 		}
 
 
-		internal string Convert(string[] fileContent)
+		internal string Convert(List<string> fileContent)
 		{
 			if (!string.IsNullOrWhiteSpace(_settings.Title))
+			{
 				_sb.AppendLine(FormattableString.Invariant($"<title>{(_settings.CreateEntities && _entities?.Count > 0 ? EncodeCharacters(_settings.Title) : _settings.Title)}</title>"));
+			}
 
 			if (!string.IsNullOrWhiteSpace(_settings.Css))
 			{
-
 				_sb.AppendLine(FormattableString.Invariant($"<style>\r\n{_settings.Css}\r\n</style>"));
 			}
 
@@ -88,7 +92,7 @@ namespace Sander.txt2html
 		}
 
 
-		private void ConvertBody(string[] fileContent)
+		private void ConvertBody(List<string> fileContent)
 		{
 			/*
 			 * Merge paragraphs
@@ -100,7 +104,7 @@ namespace Sander.txt2html
 			 * Add <p></p>
 			 */
 
-			for (var i = 0; i < fileContent.Length; i++)
+			for (var i = 0; i < fileContent.Count; i++)
 			{
 				var current = fileContent[i];
 
@@ -152,8 +156,15 @@ namespace Sander.txt2html
 
 		internal static void FixItalicOrBold(ref string encoded, char marker, string tagcontent)
 		{
+			//check for multiple symbols in a row and assume they are not meant to be bold/italic markers. E.g. "*** important non-bold message ***"
+			//not a perfect solution, but all others make the configuration too complex - e.g. "assume *** is h1, ** is h2" etc
+			if (encoded.Contains(new string(marker, 2)))
+				return;
+
 			var loc = 0;
 			var isStart = true;
+
+
 			while (true)
 			{
 				var first = encoded.IndexOf(marker, loc);
@@ -161,6 +172,8 @@ namespace Sander.txt2html
 					break;
 
 				var next = encoded.IndexOf(marker, first + 1);
+
+
 				if (isStart && next == -1)
 					break;
 
@@ -172,12 +185,12 @@ namespace Sander.txt2html
 		}
 
 
-		internal void MergeParagraphs(string[] fileContent, ref int i, ref string current)
+		internal void MergeParagraphs(List<string> fileContent, ref int i, ref string current)
 		{
 			Debug.Assert(_settings.MinimumLineLength != null, "_fixParagraphs would be false");
-			while (i < fileContent.Length && (!EolSymbols.Contains(current[current.Length - 1]) || current.Length < _settings.MinimumLineLength.Value))
+			while (i < fileContent.Count && (!EolSymbols.Contains(current[current.Length - 1]) || current.Length < _settings.MinimumLineLength.Value))
 			{
-				if (i + 1 >= fileContent.Length)
+				if (i + 1 >= fileContent.Count)
 					break;
 
 				var next = fileContent[i + 1];

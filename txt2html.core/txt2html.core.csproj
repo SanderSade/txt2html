@@ -28,6 +28,8 @@ Features:
 * Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specified length, which don't end with characters marking end of line ('.?!") are joined.
 * Fast (v2 is more than 50x faster than v1!)
 * Free and open source</Description>
+    <PackageIconUrl>https://img.shields.io/badge/txt2html-2.0.1-brightgreen.svg?longCache=true&amp;style=for-the-badge</PackageIconUrl>
+    <Copyright>Sander Säde 2018</Copyright>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
