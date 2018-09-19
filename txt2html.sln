@@ -15,7 +15,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "txt2html.core", "txt2html.c
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52B4B2A9-4460-4311-A5EF-1746DE5528DE}"
 	ProjectSection(SolutionItems) = preProject
-		NuGet.readme.md = NuGet.readme.md
 		README.md = README.md
 		Sander.txt2html.nuspec = Sander.txt2html.nuspec
 	EndProjectSection
