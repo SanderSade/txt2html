@@ -13,6 +13,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "txt2html.UI", "txt2html.UI\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "txt2html.core", "txt2html.core\txt2html.core.csproj", "{9BD6F0DE-77D3-4AF0-8CCD-8BB695A5DDDF}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{52B4B2A9-4460-4311-A5EF-1746DE5528DE}"
+	ProjectSection(SolutionItems) = preProject
+		NuGet.readme.md = NuGet.readme.md
+		README.md = README.md
+		Sander.txt2html.nuspec = Sander.txt2html.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+	<metadata>
+		<id>Sander.txt2html</id>
+		<version>2.0.1</version>
+		<authors>Sander Säde</authors>
+		<owners>Sander Säde</owners>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt</licenseUrl>
+		<projectUrl>https://github.com/SanderSade/txt2html/tree/master/txt2html.core</projectUrl>
+		<iconUrl>https://img.shields.io/badge/txt2html-2.0.1-brightgreen.svg?longCache=true&amp;style=for-the-badge</iconUrl>
+		<description>Use txt2html to convert plain text files to the hypertext markup language (HTML). </description>
+		<copyright>Sander Säde 2018</copyright>
+		<tags>txt2html text-conversion text-to-html</tags>
+		<repository type="GitHub" url="https://github.com/SanderSade/txt2html" />
+		<dependencies>
+			<group targetFramework=".NETStandard2.0" />
+		</dependencies>
+	</metadata>
+	 <files>
+		<file src="txt2html.core\bin\Release\netstandard2.0\txt2html.core.dll" target="lib\netstandard2.0" />
+		<file src="txt2html.core\bin\Release\netstandard2.0\txt2html.xml" target="lib\netstandard2.0" />
+		<file src="txt2html.core\bin\Release\netstandard2.0\txt2html.ent" target="lib\netstandard2.0" />
+		<file src="txt2html.core\bin\Release\netstandard2.0\txt2html.core.deps.json" target="lib\netstandard2.0" />
+
+	</files>
+</package>

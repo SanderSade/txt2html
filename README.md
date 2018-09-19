@@ -34,7 +34,7 @@ Input file -- just name or full path to the input text file
 -bold -- Fix *text* to HTML bold. Optional, defaults to false (no conversion) if omitted
 -italic -- Fix _text_ to HTML italic/emphasis. Optional, defaults to false (no conversion) if omitted
 -urls -- Detect URL's and make them clickable. Optional, defaults to false
--entities -- replace characters with HTML entities. The characters are in file txt2html.ent, use Notepad to edit it. This functionality can also be used to replace any character or string.
+-entities -- replace characters with HTML entities. The characters are in file txt2html.ent, use Notepad to edit it. This functionality can also be used to replace any character or string. If the entities file does not exist, [embedded default entities list](https://raw.githubusercontent.com/SanderSade/txt2html/master/txt2html.core/txt2html.ent) is used.
 -fixparagraphs:<minimum line length> -- Attempt to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than <minimum line length> symbols which don't end with characters marking end of line ('.?!") are joined.
 
 Examples:
@@ -52,11 +52,19 @@ txt2html is licensed under [Mozilla Public License](https://github.com/SanderSad
 
 ### Version info
 * 2.0
-    * Complete rewrite in .NET
-    * Major functional changes compared to v1 are:
-        * HTML5 (was XHTML)
-        * Supports drag'n'drop
-        * Multi-file support
-        * Right-click Explorer option no longer available (adding menu items for .txt seems to be blocked in Windows 10. I could easily add shortcut for .text, but not .txt)
-        * Slightly improved paragraph joining
-        * Option to add the title
+  * Complete rewrite in .NET
+  * Major functional changes compared to v1 are:
+    * HTML5 (was XHTML)
+    * Supports drag'n'drop
+    * Multi-file support
+    * Right-click Explorer option no longer available (adding menu items for .txt seems to be blocked in Windows 10. I could easily add shortcut for .text, but not .txt)
+    * Slightly improved paragraph joining
+    * Option to add the title
+* 2.0.1
+  * txt2html.core is now NetStandard 2.0 library
+  * Added NuGet package creation
+  * Change namespace to Sander.txt2html
+  * Update NuGet package (Newtonsoft.Json used by tests)
+  * Embed default entities file to core dll to be used as fallback when the file isn't found
+  * Added .editorConfig
+  * Updated documentation
