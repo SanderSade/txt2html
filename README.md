@@ -68,3 +68,7 @@ txt2html is licensed under [Mozilla Public License](https://github.com/SanderSad
   * Embed default entities file to core dll to be used as fallback when the file isn't found
   * Added .editorConfig
   * Updated documentation
+* 2.0.2
+  * Fixed issue with UTF-8 vs default encoding ([Issue #3](https://github.com/SanderSade/txt2html/issues/3)) - thanks to [tigros](https://github.com/tigros) for reporting it!
+  * Updated Newtonsoft.Json (used by tests).
+  * Code cleanup.

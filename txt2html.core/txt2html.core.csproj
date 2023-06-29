@@ -1,50 +1,52 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>txt2html.core</AssemblyName>
-    <RootNamespace>Sander.txt2html</RootNamespace>
-    <PackageId>Sander.txt2html</PackageId>
-    <Version>2.0.1</Version>
-    <Authors>Sander Säde</Authors>
-    <Company>Sander Säde</Company>
-    <Product>txt2html</Product>
-    <PackageLicenseUrl>https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/SanderSade/txt2html</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/SanderSade/txt2html</RepositoryUrl>
-    <RepositoryType>GitHub</RepositoryType>
-    <PackageTags>txt2html, text conversion</PackageTags>
-    <AssemblyVersion>2.0.1.0</AssemblyVersion>
-    <FileVersion>2.0.1.0</FileVersion>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Description>Use txt2html to convert plain text files to the hypertext markup language (HTML).
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<AssemblyName>txt2html.core</AssemblyName>
+		<RootNamespace>Sander.txt2html</RootNamespace>
+		<PackageId>Sander.txt2html</PackageId>
+		<Version>2.0.2</Version>
+		<Authors>Sander Säde</Authors>
+		<Company>Sander Säde</Company>
+		<Product>txt2html</Product>
+		<PackageLicenseUrl>https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/SanderSade/txt2html</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SanderSade/txt2html</RepositoryUrl>
+		<RepositoryType>GitHub</RepositoryType>
+		<PackageTags>txt2html, text conversion</PackageTags>
+		<AssemblyVersion>2.0.2.0</AssemblyVersion>
+		<FileVersion>2.0.2.0</FileVersion>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Description>
+			Use txt2html to convert plain text files to the hypertext markup language (HTML).
 
-Features:
-* Clean and compliant HTML5
-* Option to include your own CSS
-* HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (&lt;,&gt;,",&amp;) are always replaced, so generally you don't have to enable this option
-* Detects and fixes _italic_ and *bold* (optional)
-* Detects and marks URL's (optional)
-* Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specified length, which don't end with characters marking end of line ('.?!") are joined.
-* Fast (v2 is more than 50x faster than v1!)
-* Free and open source</Description>
-    <PackageIconUrl>https://img.shields.io/badge/txt2html-2.0.1-brightgreen.svg?longCache=true&amp;style=for-the-badge</PackageIconUrl>
-    <Copyright>Sander Säde 2018</Copyright>
-  </PropertyGroup>
+			Features:
+			* Clean and compliant HTML5
+			* Option to include your own CSS
+			* HTML entity replacement (optional; you can also edit the entity list). Note that critical entities (&lt;,&gt;,",&amp;) are always replaced, so generally you don't have to enable this option
+			* Detects and fixes _italic_ and *bold* (optional)
+			* Detects and marks URL's (optional)
+			* Optional paragraph joining. Attempts to merge hard-coded line-breaks into coherent paragraphs. Lines shorter than specified length, which don't end with characters marking end of line ('.?!") are joined.
+			* Fast (v2 is more than 50x faster than v1!)
+			* Free and open source
+		</Description>
+		<PackageIconUrl>https://img.shields.io/badge/txt2html-2.0.1-brightgreen.svg?longCache=true&amp;style=for-the-badge</PackageIconUrl>
+		<Copyright>Sander Säde 2018</Copyright>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
-  </PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile></DocumentationFile>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <DocumentationFile>bin\Release\netstandard2.0\txt2html.xml</DocumentationFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="txt2html.ent">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <IncludeInPackage>true</IncludeInPackage>
-      <BuildAction>None</BuildAction>
-      <CopyToOutput>true</CopyToOutput>
-    </EmbeddedResource>
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>bin\Release\netstandard2.0\txt2html.xml</DocumentationFile>
+	</PropertyGroup>
+	<ItemGroup>
+		<EmbeddedResource Include="txt2html.ent">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<IncludeInPackage>true</IncludeInPackage>
+			<BuildAction>None</BuildAction>
+			<CopyToOutput>true</CopyToOutput>
+		</EmbeddedResource>
+	</ItemGroup>
 </Project>

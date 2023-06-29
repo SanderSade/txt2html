@@ -13,9 +13,11 @@ namespace Sander.txt2html
 	internal sealed class Conversion
 	{
 		private static readonly char[] EolSymbols = { '.', '"', '!', '?', '\'', '…' };
+
 		private static readonly Regex UrlRegex = new Regex(
 			@"((www\.|(http|https|ftp|news|file)+\:\/\/)[&#95;.a-z0-9-]+\.[a-z0-9\/&#95;:@=.+?,##%&~-]*[^.|\'|\# |!|\(|?|,| |>|<|;|\)])",
 			RegexOptions.IgnoreCase | RegexOptions.Compiled);
+
 		private readonly bool _fixParagraphs;
 		private readonly StringBuilder _sb;
 		private readonly ConversionSettings _settings;
@@ -31,7 +33,9 @@ namespace Sander.txt2html
 			_fixParagraphs = _settings.MinimumLineLength.HasValue;
 
 			if (_settings.CreateEntities)
+			{
 				PrepareEntities();
+			}
 		}
 
 
@@ -64,7 +68,9 @@ namespace Sander.txt2html
 			{
 				var split = line.Split('\t');
 				if (split.Length != 2)
+				{
 					throw new ApplicationException($"Bad line in {txt2HtmlEnt}: {line}. Every line must be in format <character><tab><entity>");
+				}
 
 				_entities.Add(split[0], split[1]);
 			}
@@ -75,7 +81,8 @@ namespace Sander.txt2html
 		{
 			if (!string.IsNullOrWhiteSpace(_settings.Title))
 			{
-				_sb.AppendLine(FormattableString.Invariant($"<title>{(_settings.CreateEntities && _entities?.Count > 0 ? EncodeCharacters(_settings.Title) : _settings.Title)}</title>"));
+				_sb.AppendLine(FormattableString.Invariant(
+					$"<title>{(_settings.CreateEntities && _entities?.Count > 0 ? EncodeCharacters(_settings.Title) : _settings.Title)}</title>"));
 			}
 
 			if (!string.IsNullOrWhiteSpace(_settings.Css))
@@ -88,7 +95,7 @@ namespace Sander.txt2html
 			ConvertBody(fileContent);
 
 			_sb.AppendLine("</body>\r\n</html>");
-			return Encoding.UTF8.GetString(Encoding.Default.GetBytes(_sb.ToString()));
+			return Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(_sb.ToString()));
 		}
 
 
@@ -109,24 +116,36 @@ namespace Sander.txt2html
 				var current = fileContent[i];
 
 				if (!GetValidLine(ref current))
+				{
 					continue;
+				}
 
 				if (_fixParagraphs)
+				{
 					MergeParagraphs(fileContent, ref i, ref current);
+				}
 
 				var encoded = HttpUtility.HtmlEncode(current);
 
 				if (_settings.CreateEntities && _entities?.Count > 0)
+				{
 					encoded = EncodeCharacters(encoded);
+				}
 
 				if (_settings.FixBold)
+				{
 					FixItalicOrBold(ref encoded, '*', "strong");
+				}
 
 				if (_settings.FixItalic)
+				{
 					FixItalicOrBold(ref encoded, '_', "em");
+				}
 
 				if (_settings.DetectUrls)
+				{
 					encoded = ReplaceUrls(encoded);
+				}
 
 				_sb.AppendLine(FormattableString.Invariant($"<p>{encoded}</p>"));
 			}
@@ -140,13 +159,14 @@ namespace Sander.txt2html
 				Debug.Assert(encoded != null, "encoded != null");
 				encoded = encoded.Replace(entity.Key, entity.Value);
 			}
+
 			return encoded;
 		}
 
 
 		/// <summary>
-		/// Finds web addresses in a string and adds a tags
-		/// <para>Adapted from http://rickyrosario.com/blog/converting-a-url-into-a-link-in-csharp-using-regular-expressions/ </para>
+		///     Finds web addresses in a string and adds a tags
+		///     <para>Adapted from http://rickyrosario.com/blog/converting-a-url-into-a-link-in-csharp-using-regular-expressions/ </para>
 		/// </summary>
 		internal static string ReplaceUrls(string line)
 		{
@@ -159,23 +179,28 @@ namespace Sander.txt2html
 			//check for multiple symbols in a row and assume they are not meant to be bold/italic markers. E.g. "*** important non-bold message ***"
 			//not a perfect solution, but all others make the configuration too complex - e.g. "assume *** is h1, ** is h2" etc
 			if (encoded.Contains(new string(marker, 2)))
+			{
 				return;
+			}
 
-			var loc = 0;
 			var isStart = true;
 
 
 			while (true)
 			{
-				var first = encoded.IndexOf(marker, loc);
+				var first = encoded.IndexOf(marker, 0);
 				if (first == -1)
+				{
 					break;
+				}
 
 				var next = encoded.IndexOf(marker, first + 1);
 
 
 				if (isStart && next == -1)
+				{
 					break;
+				}
 
 				encoded = encoded.Remove(first, 1);
 				var tag = isStart ? string.Empty : "/";
@@ -191,18 +216,25 @@ namespace Sander.txt2html
 			while (i < fileContent.Count && (!EolSymbols.Contains(current[current.Length - 1]) || current.Length < _settings.MinimumLineLength.Value))
 			{
 				if (i + 1 >= fileContent.Count)
+				{
 					break;
+				}
 
 				var next = fileContent[i + 1];
 
 				//if next is empty line, consider the line ended
 				if (next.Trim().Length == 0)
+				{
 					break;
+				}
 
 				++i;
 
 				if (!GetValidLine(ref next))
+				{
 					continue;
+				}
+
 				current += $" {next}";
 			}
 		}
@@ -211,16 +243,22 @@ namespace Sander.txt2html
 		private bool GetValidLine(ref string current)
 		{
 			if (current == null)
+			{
 				return false;
+			}
 
 			current = current.Trim();
 
 			while (current.Contains("  "))
+			{
 				current = current.Replace("  ", " ");
+			}
 
 			//keep extra valid line breaks, but don't process them further
 			if (current.Length == 0)
+			{
 				_sb.AppendLine("<br/>");
+			}
 
 			return !string.IsNullOrWhiteSpace(current);
 		}
