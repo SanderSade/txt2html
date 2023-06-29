@@ -55,18 +55,20 @@ namespace text2html.test
 		[TestMethod]
 		public void Conversion_TestFullConversion()
 		{
-			var conversion = new Conversion(new ConversionSettings { DetectUrls = true, FixBold = true, FixItalic = true, MinimumLineLength = 50, Title = "Lorem Ipsum"});
+			var conversion = new Conversion(new ConversionSettings
+			{
+				DetectUrls = true,
+				FixBold = true,
+				FixItalic = true,
+				MinimumLineLength = 50,
+				Title = "Lorem Ipsum"
+			});
 
 			var text = new[]
 			{
-				"Lorem ipsum dolor sit amet,",
-				"consectetur adipiscing elit. ",
-				"Haec quo *modo* _conveniant_, non sane intellego.",
-				"Sed virtutem ipsam inchoavit, nihil amplius. ",
-				"",
-				"Non dolere, inquam, istud quam vim habeat postea videro; ",
-				"Duo Reges: constructio interrete. www.example.com. ",
-				"Sed quid sentiat, non videtis. At iste non dolendi status non vocatur voluptas."
+				"Lorem ipsum dolor sit amet,", "consectetur adipiscing elit. ", "Haec quo *modo* _conveniant_, non sane intellego.",
+				"Sed virtutem ipsam inchoavit, nihil amplius. ", "", "Non dolere, inquam, istud quam vim habeat postea videro; ",
+				"Duo Reges: constructio interrete. www.example.com. ", "Sed quid sentiat, non videtis. At iste non dolendi status non vocatur voluptas."
 			};
 
 			var result = conversion.Convert(text.ToList());
@@ -79,12 +81,13 @@ namespace text2html.test
 		[TestMethod]
 		public void Conversion_TestEntityConversion()
 		{
-			var conversion = new Conversion(new ConversionSettings { CreateEntities = true, Title = "€"});
-
-			var text = new[]
+			var conversion = new Conversion(new ConversionSettings
 			{
-				"$_`¢£¤¥§¨©ª«¬®"
-			};
+				CreateEntities = true,
+				Title = "€"
+			});
+
+			var text = new[] { "$_`¢£¤¥§¨©ª«¬®" };
 
 			var result = conversion.Convert(text.ToList());
 			Trace.WriteLine(result);
@@ -105,9 +108,13 @@ namespace text2html.test
 			File.WriteAllText("Shakespeare.plain.html", result);
 
 
-
 			sw = Stopwatch.StartNew();
-			conversion = new Conversion(new ConversionSettings { FixBold = true, FixItalic = true });
+			conversion = new Conversion(new ConversionSettings
+			{
+				FixBold = true,
+				FixItalic = true
+			});
+
 			result = conversion.Convert(text.ToList());
 			sw.Stop();
 			Trace.WriteLine($"Converted Shakespeare with bold and italic: {sw.Elapsed}");
@@ -122,22 +129,33 @@ namespace text2html.test
 
 
 			sw = Stopwatch.StartNew();
-			conversion = new Conversion(new ConversionSettings { FixBold = true, FixItalic = true, MinimumLineLength = 50});
+			conversion = new Conversion(new ConversionSettings
+			{
+				FixBold = true,
+				FixItalic = true,
+				MinimumLineLength = 50
+			});
+
 			result = conversion.Convert(text.ToList());
 			sw.Stop();
 			Trace.WriteLine($"Converted Shakespeare with bold, italic and line fixes: {sw.Elapsed}");
 			File.WriteAllText("Shakespeare.bolditaliclines.html", result);
 
 
-
 			sw = Stopwatch.StartNew();
-			conversion = new Conversion(new ConversionSettings { FixBold = true, FixItalic = true, MinimumLineLength = 50, CreateEntities = true});
+			conversion = new Conversion(new ConversionSettings
+			{
+				FixBold = true,
+				FixItalic = true,
+				MinimumLineLength = 50,
+				CreateEntities = true
+			});
+
 			result = conversion.Convert(text.ToList());
 			sw.Stop();
 			Trace.WriteLine($"Converted Shakespeare with bold, italic, line fixes and entities: {sw.Elapsed}");
 			File.WriteAllText("Shakespeare.bolditaliclinesentities.html", result);
 		}
-
 
 
 		[TestMethod]
@@ -147,13 +165,20 @@ namespace text2html.test
 			Trace.WriteLine(result.Substring(0, 30000));
 		}
 
+
 		[TestMethod]
 		public void Conversion_FileStream()
 		{
 			using (var fs = new FileStream("t8.shakespeare.txt", FileMode.Open, FileAccess.Read))
 			{
 				fs.Position = 0;
-				var result = Converter.ConvertAsync(new ConversionSettings() {DetectUrls = true, FixBold = true, FixItalic = true}, fs, Encoding.ASCII).GetAwaiter().GetResult();
+				var result = Converter.ConvertAsync(new ConversionSettings
+				{
+					DetectUrls = true,
+					FixBold = true,
+					FixItalic = true
+				}, fs, Encoding.ASCII).GetAwaiter().GetResult();
+
 				Trace.WriteLine(result.Substring(0, 30000));
 				//Assert.AreEqual(Converter.Convert(new ConversionSettings(), "t8.shakespeare.txt"), result);
 			}

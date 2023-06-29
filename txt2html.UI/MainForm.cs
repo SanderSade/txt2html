@@ -26,7 +26,9 @@ namespace Sander.txt2html.UI
 			ChIncludeCSS.Checked = Settings.UseCustomCss;
 			ChJoinParagraphs.Checked = Settings.FixParagraphs;
 			if (Settings.ConversionSettings.MinimumLineLength != null)
+			{
 				NumericMinimumLine.Value = (int)Settings.ConversionSettings.MinimumLineLength;
+			}
 
 			ChCreateEntities.Checked = Settings.ConversionSettings.CreateEntities;
 		}
@@ -48,7 +50,9 @@ namespace Sander.txt2html.UI
 			var link = (sender as Control)?.Tag as string;
 
 			if (!string.IsNullOrWhiteSpace(link))
+			{
 				Process.Start(link);
+			}
 		}
 
 
@@ -90,7 +94,7 @@ namespace Sander.txt2html.UI
 			var top = !linkLabels.Any()
 				? BtSelectFiles.Bottom + 10
 				: linkLabels.Last()
-							.Bottom + 4;
+					.Bottom + 4;
 
 			var label = new LinkLabel
 			{
@@ -125,11 +129,11 @@ namespace Sander.txt2html.UI
 
 			button.FlatAppearance.BorderSize = 0;
 			button.Click += (sender, args) =>
-							{
-								Debug.Assert(sender != null, "sender != null");
-								// ReSharper disable once AssignNullToNotNullAttribute
-								Process.Start((sender as Control)?.Tag as string);
-							};
+			{
+				Debug.Assert(sender != null, "sender != null");
+				// ReSharper disable once AssignNullToNotNullAttribute
+				Process.Start((sender as Control)?.Tag as string);
+			};
 
 			Controls.Add(button);
 		}
@@ -138,7 +142,7 @@ namespace Sander.txt2html.UI
 		private IEnumerable<LinkLabel> GetFileLabels()
 		{
 			return Controls.OfType<LinkLabel>()
-						   .Where(x => x.Name.StartsWith("FileLabel"));
+				.Where(x => x.Name.StartsWith("FileLabel"));
 		}
 
 
@@ -150,8 +154,8 @@ namespace Sander.txt2html.UI
 			}
 
 			foreach (var button in Controls.OfType<Button>()
-										   .Where(x => x.Name.StartsWith("FolderButton"))
-										   .ToList())
+				         .Where(x => x.Name.StartsWith("FolderButton"))
+				         .ToList())
 			{
 				button.Dispose();
 			}
@@ -162,7 +166,9 @@ namespace Sander.txt2html.UI
 		{
 			var entityFile = GetEntityFile();
 			if (!string.IsNullOrWhiteSpace(entityFile))
+			{
 				Process.Start("notepad.exe", entityFile);
+			}
 		}
 
 
@@ -173,8 +179,10 @@ namespace Sander.txt2html.UI
 			{
 				MessageBox.Show(this, $"Entity file was not found! Expected file at:\r\n\r\n\t{entityFile}", "Entity file not found",
 					MessageBoxButtons.OK, MessageBoxIcon.Error);
+
 				return null;
 			}
+
 			return entityFile;
 		}
 
@@ -205,6 +213,7 @@ namespace Sander.txt2html.UI
 				var outFile = ConvertFile(fileName, TxtTitle.Text);
 				AddLine(outFile);
 			}
+
 			DisableEnableContols(this, true);
 		}
 
@@ -226,7 +235,10 @@ namespace Sander.txt2html.UI
 			if (settings.UseCustomCss)
 			{
 				if (!File.Exists(settings.CssFile))
+				{
 					throw new FileNotFoundException($"CSS file does not exist:\r\n{settings.CssFile}", settings.CssFile);
+				}
+
 				settings.ConversionSettings.Css = File.ReadAllText(settings.CssFile);
 			}
 
@@ -236,7 +248,9 @@ namespace Sander.txt2html.UI
 				: null;
 
 			if (!File.Exists(fileName))
+			{
 				throw new FileNotFoundException($"Input file was not found:\r\n{fileName}", fileName);
+			}
 
 			var lines = File.ReadAllLines(fileName);
 			settings.ConversionSettings.Title = title;
@@ -260,7 +274,9 @@ namespace Sander.txt2html.UI
 		private void MainForm_DragEnter(object sender, DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.FileDrop))
+			{
 				e.Effect = DragDropEffects.Copy;
+			}
 		}
 	}
 }
