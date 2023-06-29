@@ -1,3 +1,8 @@
+[![GitHub license](https://img.shields.io/badge/licence-MPL%202.0-brightgreen.svg)](https://github.com/SanderSade/txt2html/blob/master/LICENSE.txt)
+[![NetStandard 2.0](https://img.shields.io/badge/-.NET%20Standard%202.0-green.svg)](https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md)
+[![NuGet v2.0.2](https://img.shields.io/badge/NuGet-v2.0.2-lightgrey.svg)](https://www.nuget.org/packages/Sander.txt2html/)
+
+
 # txt2html
 txt2html is a program to convert plain text files to the hypertext markup language (HTML).
 
@@ -15,6 +20,7 @@ txt2html is a program to convert plain text files to the hypertext markup langua
 * Drag'n'drop
 * Both graphical and command-line interface
 * Free and open source
+* Also available as a NuGet package - https://www.nuget.org/packages/Sander.txt2html
 
 ### Installing
 To install, just extract all files from the archive to any folder and double-click on txt2html.exe to start using the program.
