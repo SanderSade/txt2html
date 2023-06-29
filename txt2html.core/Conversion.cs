@@ -95,7 +95,7 @@ namespace Sander.txt2html
 			ConvertBody(fileContent);
 
 			_sb.AppendLine("</body>\r\n</html>");
-			return Encoding.UTF8.GetString(Encoding.Default.GetBytes(_sb.ToString()));
+			return Encoding.UTF8.GetString(Encoding.UTF8.GetBytes(_sb.ToString()));
 		}
 
 

@@ -183,5 +183,29 @@ namespace text2html.test
 				//Assert.AreEqual(Converter.Convert(new ConversionSettings(), "t8.shakespeare.txt"), result);
 			}
 		}
+
+
+		[TestMethod]
+		public void Conversion_TestChineseAndJapaneseConversion()
+		{
+			string Convert(string text, string title)
+			{
+				var conversion = new Conversion(new ConversionSettings
+				{
+					CreateEntities = true,
+					Title = title
+				});
+
+				var input = new[] { text };
+
+				var result = conversion.Convert(input.ToList());
+				Trace.WriteLine(result);
+
+				return result;
+			}
+
+			Assert.IsTrue(Convert("我喜欢吃苹果", "我 Chinese").Contains("我喜欢吃苹果"));
+			Assert.IsTrue(Convert("私はりんごが好きです", "私 Japanese").Contains("私はりんごが好きです"));
+		}
 	}
 }

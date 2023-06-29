@@ -5,7 +5,7 @@
 		<AssemblyName>txt2html.core</AssemblyName>
 		<RootNamespace>Sander.txt2html</RootNamespace>
 		<PackageId>Sander.txt2html</PackageId>
-		<Version>2.0.1</Version>
+		<Version>2.0.2</Version>
 		<Authors>Sander Säde</Authors>
 		<Company>Sander Säde</Company>
 		<Product>txt2html</Product>
@@ -14,8 +14,8 @@
 		<RepositoryUrl>https://github.com/SanderSade/txt2html</RepositoryUrl>
 		<RepositoryType>GitHub</RepositoryType>
 		<PackageTags>txt2html, text conversion</PackageTags>
-		<AssemblyVersion>2.0.1.0</AssemblyVersion>
-		<FileVersion>2.0.1.0</FileVersion>
+		<AssemblyVersion>2.0.2.0</AssemblyVersion>
+		<FileVersion>2.0.2.0</FileVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<Description>
 			Use txt2html to convert plain text files to the hypertext markup language (HTML).
