@@ -64,7 +64,7 @@ namespace Sander.txt2html.console
 
 		private static string GetSplitValue(List<string> arguments, string key)
 		{
-			var argument = arguments.FirstOrDefault(x => x.StartsWith(key, StringComparison.OrdinalIgnoreCase));
+			var argument = arguments.Find(x => x.StartsWith(key, StringComparison.OrdinalIgnoreCase));
 			if (argument == null)
 			{
 				return null;
@@ -86,7 +86,7 @@ namespace Sander.txt2html.console
 
 		private static bool GetSimpleKeyExists(List<string> arguments, string key)
 		{
-			return arguments.Any(x => string.Compare(x, key, StringComparison.OrdinalIgnoreCase) == 0);
+			return arguments.Any(x => string.Equals(x, key, StringComparison.OrdinalIgnoreCase));
 		}
 
 

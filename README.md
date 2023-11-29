@@ -23,7 +23,7 @@ txt2html is a program to convert plain text files to the hypertext markup langua
 * Also available as a NuGet package - https://www.nuget.org/packages/Sander.txt2html
 
 ### Installing
-To install, just extract all files from the archive to any folder and double-click on txt2html.exe to start using the program.
+To install, just extract all files from the archive to any folder and double-click on txt2htmlUI.exe to start using the program. The commandline version of txt2html is txt2html.exe
 
 ### Uninstalling
 Delete all files
@@ -31,7 +31,7 @@ Delete all files
 ### Command-line options
 ```
 Optional arguments are in parentheses []:  
-        txthtml.console.exe "<input file>" [-o:"<output file>"] [-t:"<title>"] [-css:"<css file>"] [-bold] [-italic] [-urls] [-entities] [-fixparagraphs:<minimum line length>]  
+        txthtml.exe "<input file>" [-o:"<output file>"] [-t:"<title>"] [-css:"<css file>"] [-bold] [-italic] [-urls] [-entities] [-fixparagraphs:<minimum line length>]  
         
 Input file -- just name or full path to the input text file
 -o:<output file> -- Optional, if omitted input file with the .html extension will be used. Can have a full path. WARNING: output file will be overwritten if it exists!
@@ -78,3 +78,8 @@ txt2html is licensed under [Mozilla Public License](https://github.com/SanderSad
   * Fixed issue with UTF-8 vs default encoding ([Issue #3](https://github.com/SanderSade/txt2html/issues/3)) - thanks to [tigros](https://github.com/tigros) for reporting it!
   * Updated Newtonsoft.Json (used by tests).
   * Code cleanup.
+* 2.0.3
+  * Renamed txt2html.exe (UI) to txt2htmlUI.exe to avoid confusion with the commandline txt2html.exe ([Issue #6](https://github.com/SanderSade/txt2html/issues/6) - thanks to [Owned67](https://github.com/Owned67) for reporting it!)
+  * Re-include the commandline txt2html to release, as it was accidentaly omitted in 2.0.2.
+  * Very minor code cleanup, new .editorConfig.
+  * NOTE: this will most likely be the last release on .NET Framework, and the future releases will target .NET 6 or higher.

@@ -60,7 +60,7 @@ namespace text2html.test
 		{
 			var settings = ArgumentParser.Parse("t8.shakespeare.txt", "fixparagraphs:22");
 			Write(settings);
-			Assert.IsTrue(22 == settings.ConversionSettings.MinimumLineLength);
+			Assert.IsTrue(settings.ConversionSettings.MinimumLineLength == 22);
 		}
 
 
